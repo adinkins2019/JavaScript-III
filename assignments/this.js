@@ -24,7 +24,7 @@ function birdCall(str){
 const myBird = {
     name: "Bernard",
     renderType: function(type) {
-        console.log(`My bird's name is ${name} and he is a ${this.type}`)
+        console.log(`My bird's name is ${this.name} and he is a ${type}`);
     }
 
 }

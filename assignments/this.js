@@ -23,7 +23,7 @@ function birdCall(str){
 // code example for Implicit Binding
 function myBird(){
     name: "Bernard",
-    renderType: function(type) {
+    renderType = function(type) {
         console.log(`My bird's name is ${name} and he is a ${this.type}`)
     }
 
@@ -35,8 +35,8 @@ myBird.renderType("Parrot");    //In this instance, Javascript binds the this re
 // code example for New Binding
 
 function PetAnimal(animal, type, name) {
-    this.animal: animal,
-    this.type: type,
+    this.animal = animal,
+    this.type = type,
     this.renderType = function() {
         console.log(`My pet ${this.animal} is named ${this.name} and it is a ${this.type}`);
     }

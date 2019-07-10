@@ -15,7 +15,7 @@
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
-const GameObject(attrs) {
+const GameObject(attrs){
   this.createdAt =  attrs.createdAt;
   this.name = attrs.name;
   this.dimensions = attrs.dimensions;
@@ -51,7 +51,7 @@ CharacterStats.prototype.takeDamage = function() {
   * should inherit takeDamage() from CharacterStats
 */
  
-const Humanoid(humanAttrs) {
+const Humanoid(humanAttrs){
   CharacterStats.call(this, humanAttrs);
   this.team = humanAttrs.team;
   this.weapons = humanAttrs.weapons;

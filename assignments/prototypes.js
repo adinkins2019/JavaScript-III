@@ -15,7 +15,7 @@
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
-const GameObject(attrs){
+function GameObject(attrs){
   this.createdAt =  attrs.createdAt;
   this.name = attrs.name;
   this.dimensions = attrs.dimensions;
@@ -31,12 +31,12 @@ GameObject.prototype.destroy = function() {
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
-const CharacterStats(charAttrs){
+function CharacterStats(charAttrs){
   GameObject.call(this, charAttrs);
   this.healthPoints = charAttrs.healthPoints;
 
 }
-CharacterStats.prototype = Object.create(GameObject);
+CharacterStats.prototype = Object.create(GameObject.prototype);
 CharacterStats.prototype.takeDamage = function() {
   return `${this.name} took damage.`;
 };
@@ -51,7 +51,7 @@ CharacterStats.prototype.takeDamage = function() {
   * should inherit takeDamage() from CharacterStats
 */
  
-const Humanoid(humanAttrs){
+function Humanoid(humanAttrs){
   CharacterStats.call(this, humanAttrs);
   this.team = humanAttrs.team;
   this.weapons = humanAttrs.weapons;
@@ -59,7 +59,7 @@ const Humanoid(humanAttrs){
 
 }
 
-Humanoid.prototype = Object.create(CharacterStats);
+Humanoid.prototype = Object.create(CharacterStats.prototype);
 Humanoid.prototype.greet = function() {
   return `${this.name} offers a greeting in ${this.language}.`;
 };
